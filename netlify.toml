@@ -3,7 +3,7 @@ command = "npm install --production=false --no-audit --no-fund && npm run build"
 publish = "dist"
 
 [build.environment]
-NODE_VERSION = "22"
+NODE_VERSION = "18"
 NPM_CONFIG_OPTIONAL = "false"
 
 
