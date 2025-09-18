@@ -8,9 +8,17 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [],
+      output: {
+        manualChunks: undefined,
+      },
     },
+    target: 'esnext',
+    minify: 'esbuild',
   },
   define: {
     global: 'globalThis',
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
   },
 })
