@@ -1,9 +1,0 @@
-[build]
-command = "npm install --force --no-optional && npm run build"
-publish = "dist"
-
-[build.environment]
-NODE_VERSION = "22.19.0"
-ROLLUP_SKIP_NODEJS_NATIVE = "true"
-
-
