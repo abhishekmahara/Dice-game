@@ -56,18 +56,21 @@ export const GamePlay = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white font-sans overflow-x-hidden selection:bg-red-600 ">
+    <div className=" flex flex-col items-center min-h-screen bg-[#0A0A0A] text-white font-sans overflow-x-hidden selection:bg-red-600 ">
       {/* Navigation */}
-      <Navbar
+      <div className="w-full">
+<Navbar
         setShowInstructions={setShowInstructions}
         setShowSettings={setShowSettings}
       />
+      </div>
+      
 
       <main className="container mx-auto px-14 py-6 sm:py-12 flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_auto_1fr] gap-10 sm:gap-12 items-center">
           {/* Player 1 Card */}
           <div
-            className={`relative p-6 sm:p-8 rounded-[2rem] transition-all duration-500 border-2 ${activePlayer === 0 ? "bg-[#141414] border-red-600 shadow-[0_0_50px_rgba(220,38,38,0.2)] scale-100 lg:scale-105" : "bg-transparent border-white/5 opacity-30"}`}
+            className={`relative p-6 sm:p-8 rounded-[2rem] transition-all duration-500 border-2 ${activePlayer === 0 ? "bg-[#141414] border-red-600 shadow-[0_0_50px_rgba(220,38,38,0.2)] scale-100 lg:scale-105" : "bg-transparent border-white/80 opacity-50"}`}
           >
             <div className="absolute -top-3 left-8 bg-red-600 px-3 py-0.5 rounded text-[10px] font-black uppercase tracking-widest text-white">
               Home
@@ -83,7 +86,7 @@ export const GamePlay = () => {
                 {scores[0]}
               </div>
             </div>
-            <div className="mt-6 h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+            <div className="mt-6 h-1.5 w-full bg-white/45 rounded-full overflow-hidden">
               <div
                 style={{
                   width: `${Math.min((scores[0] / targetScore) * 100, 100)}%`,
@@ -123,7 +126,7 @@ export const GamePlay = () => {
 
           {/* Player 2 Card */}
           <div
-            className={`relative p-6 sm:p-8 rounded-[2rem] transition-all duration-500 border-2 ${activePlayer === 1 ? "bg-[#141414] border-red-600 shadow-[0_0_50px_rgba(220,38,38,0.2)] scale-100 lg:scale-105" : "bg-transparent border-white/5 opacity-30"}`}
+            className={`relative p-6 sm:p-8 rounded-[2rem] transition-all duration-500 border-2 ${activePlayer === 1 ? "bg-[#141414] border-red-600 shadow-[0_0_50px_rgba(220,38,38,0.2)] scale-100 lg:scale-105" : "bg-transparent border-white/80 opacity-50"}`}
           >
             <div className="absolute -top-3 left-8 bg-white/10 px-3 py-0.5 rounded text-[10px] font-black uppercase tracking-widest text-white">
               Visitor
@@ -139,7 +142,7 @@ export const GamePlay = () => {
                 {scores[1]}
               </div>
             </div>
-            <div className="mt-6 h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+            <div className="mt-6 h-1.5 w-full bg-white/35 rounded-full overflow-hidden">
               <div
                 style={{
                   width: `${Math.min((scores[1] / targetScore) * 100, 100)}%`,
@@ -156,7 +159,7 @@ export const GamePlay = () => {
             <button
               onClick={rollDice}
               disabled={!playing || rolling}
-              className="flex-1 bg-red-600 hover:bg-red-700 disabled:bg-white/5 disabled:text-white/20 text-white font-black italic py-5 rounded-2xl shadow-[0_8px_0_#991b1b] active:translate-y-1 active:shadow-none transition-all uppercase tracking-tighter text-xl"
+              className="flex-1 bg-red-600 hover:bg-red-700  disabled:text-white/60 text-white font-black italic py-5 rounded-2xl shadow-[0_8px_0_#991b1b] active:translate-y-1 active:shadow-none transition-all uppercase tracking-tighter text-xl"
             >
               Strike
             </button>
